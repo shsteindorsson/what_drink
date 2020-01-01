@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails'
@@ -15,7 +17,7 @@ require 'sprockets/railtie'
 
 Bundler.require(*Rails.groups)
 
-module Fridge
+module WhatDrink
   class Application < Rails::Application
     config.generators do |generate|
       generate.helper false
@@ -27,6 +29,6 @@ module Fridge
     end
 
     config.load_defaults 6.0
-    config.generators.system_tests = nil
+    config.api_only = true
   end
 end
